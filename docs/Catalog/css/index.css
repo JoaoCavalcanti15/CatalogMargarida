@@ -1,0 +1,159 @@
+body {
+  background-color: #afdbdf;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100vh;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 55% 25%;
+  grid-template-areas:
+    'header'
+    'main'
+    'footer';
+}
+
+header {
+  grid-area: header;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#catalog {
+  width: 80%;
+  height: 100%;
+  border: none;
+  font-size: 5vh;
+  transition: all 0.5s ease;
+  font-family: 'Patrick Hand SC', cursive;
+  color: #fff;
+  background-color: #afdbdf;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  font-size: 4vh;
+  transition: all 0.5s ease;
+  font-family: 'Patrick Hand SC', cursive;
+  text-align: center;
+}
+
+#menu-icon {
+  background: none;
+  border: none;
+  font-size: 5vh;
+  color: white;
+}
+
+.menu-content {
+  display: none;
+  position: absolute;
+  background-color: #afdbdf;
+  right: 0;
+  top: 100%;
+}
+
+.menu-content button {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  text-align: center;
+  border: none;
+  background: none;
+  color: white;
+  font-family: 'Patrick Hand SC', cursive;
+  font-size: 4vh;
+}
+
+.menu-content button:hover, #conditions:hover, .menu:hover, #catalog:hover {
+  background-color: #7da9b3;
+  color: black;
+}
+
+.menu:hover .menu-content {
+  display: block;
+}
+
+main {
+  grid-area: main;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main img {
+  height: 50vh;
+}
+
+footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#face, #insta, #whats, #email {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 25%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  transition: all 0.3s ease;
+  color: white;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 3vh;
+}
+
+#face:hover, #insta:hover, #whats:hover, #email:hover {
+  background-color: #7da9b3;
+  color: #000;
+}
+
+#face i, #insta i, #whats i, #email i {
+  font-size: 5vh;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    flex-direction: column;
+  }
+
+  #face, #insta, #whats, #email {
+    width: 100%;
+    font-size: 2vh;
+  }
+
+  .menu:focus .menu-content {
+    display: block;
+  }
+
+  .menu-content {
+    display: none;
+  }
+
+  #catalog, .menu, #conditions, #extra-services, #face, #insta, #whats, #email{
+    border: 1px solid rgba(0,0,0,0.1);
+  }
+
+  #conditions, #extra-services {
+    font-size: 2.5vh;
+  }
+}
